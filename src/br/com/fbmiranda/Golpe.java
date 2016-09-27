@@ -1,10 +1,7 @@
 package br.com.fbmiranda;
 
-interface Golpe {
+public interface Golpe {
 	
-	
-	 void usarSoco(Lutador l);
-	 void usarChute(Lutador l);
-	 void usarRasteira(Lutador l);
+	 void acaoGolpear(Lutador l);
 
 }

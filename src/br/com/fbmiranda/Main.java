@@ -1,5 +1,9 @@
 package br.com.fbmiranda;
 
+import br.com.fbmiranda.golpes.Chute;
+import br.com.fbmiranda.golpes.Rasteira;
+import br.com.fbmiranda.golpes.Soco;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,13 +16,14 @@ public class Main {
 		System.out.println(" \n# " + caio.getNome() + " VS " + jones.getNome() + " #\n ");
 		
 		System.out.println("Inicio da Luta!!!");
+		
 				
-		caio.usarSoco(jones);
+		jones.atacar(caio, new Soco());
+		caio.atacar(jones, new Chute());
+		jones.atacar(caio, new Rasteira());
 		
-		jones.usarChute(caio);
-		
-		caio.usarRasteira(jones);
-		
+		jones.atacar(jones, new Soco()); // tentativa de Auto-lesão
+
 		// No Strategy Design Pattern, o objetivo é realizar uma operação com maneiras diferentes, ou seja, estratégias diferentes.
 		
 		//Neste exemplo, os lutadores possuem diferentes estratégias (Golpes) para atacar o oponente.
